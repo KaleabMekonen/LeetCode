@@ -10,14 +10,14 @@
 
 ## Folder structure
 Root folder
-	|_ Problem 1
-	    |_ Problem 1 Description.rtf
-		  |_ Problem 1
-			     |_ main.cpp
-	|_ Problem 2
-		  |_ Problem 2 Description.rtf
-		  |_ Problem 2
-			      |_ main.cpp
+	|_ Problem 1  
+	    |_ Problem 1 Description.rtf  
+		  |_ Problem 1  
+			     |_ main.cpp  
+	|_ Problem 2  
+		  |_ Problem 2 Description.rtf  
+		  |_ Problem 2  
+			      |_ main.cpp  
 	...
 
 
