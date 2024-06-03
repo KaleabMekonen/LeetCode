@@ -9,6 +9,6 @@
 
 int main(int argc, const char * argv[]) {
 
-    std::cout << "Here is the solution.!\n";
+    std::cout << "Here will be the solution of of the problem '../problem' .!\n";
     return 0;
 }
