@@ -10,15 +10,15 @@
 
 ## Folder structure
 Root folder
-	|_ Problem 1  
-	    |_ Problem 1 Description.rtf  
-		  |_ Problem 1  
-			     |_ main.cpp  
-	|_ Problem 2  
-		  |_ Problem 2 Description.rtf  
-		  |_ Problem 2  
-			      |_ main.cpp  
-	...
+&nbsp;&nbsp;&nbsp;&nbsp;|_ Problem 1  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_ Problem 1 Description.rtf  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_ Problem 1  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_ main.cpp  
+&nbsp;&nbsp;&nbsp;&nbsp;|_ Problem 2  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_ Problem 2 Description.rtf  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_ Problem 2  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_ main.cpp  
+&nbsp;&nbsp;&nbsp;&nbsp;...
 
 
 ## Code checkin process:
