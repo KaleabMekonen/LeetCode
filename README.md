@@ -23,19 +23,19 @@ Root folder
 
 ## Code checkin process:
 
-Step 1: Create a branch from main
-		git checkout main
-		git pull
-		git checkout -b dev/kal/problem1
+### Step 1: Create a branch from main  
+		git checkout main  
+		git pull   
+		git checkout -b dev/kal/problem1  
 
-Step 2: Work on the newly created branch 
+### Step 2: Work on the newly created branch  
 	•	You can create as much commits as you would like  
 	•	Discussions/Comments happen here  
 	•	Make sure you solved the problem  
 	•	Squash the commits into one  
 	•	Create a Pull Request to the main branch with a proper description  
 
-Step 3: Approve the Pull request to the main branch 
+### Step 3: Approve the Pull request to the main branch 
 
 
 
