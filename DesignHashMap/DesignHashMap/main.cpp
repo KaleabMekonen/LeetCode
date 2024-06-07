@@ -3,10 +3,11 @@
 //  DesignHashMap
 //
 //  Created by Kaleab Mekonen on 6/3/24.
-//
+//  Problem: https://leetcode.com/problems/design-hashmap/description/
 
 #include <vector>
 #include <iostream>
+#include <cassert>
 
 class MyHashMap {
 private:
@@ -34,6 +35,7 @@ public:
         // Search the key
         for (auto& keyValuePair : HashMap[key]) {
             // If it exists, update the value.
+            //
             if (keyValuePair.first == key) {
                 keyValuePair.second = value;
                 return;
@@ -55,7 +57,9 @@ public:
     }
     
     void remove(int key) {
-           
+        if (key < 0 || key >= SIZE) return; // Check if key is within valid range
+        
+        HashMap[key].clear(); // Clear the vector associated with the given key
     }
 };
 
@@ -64,43 +68,40 @@ void testMyHashMap() {
     // ["MyHashMap","put","put","get","get","put","get","remove","get"]
     // [[],[1,1],[2,2],[1],[3],[2,1],[2],[2],[2]]
     
+    int result = -1;
     
     // Create an instance of MyHashMap
     MyHashMap myHashMap;
-    std::cout << "Actual: " << myHashMap.get(0) << "Expected: []"  << std::endl;
+    std::cout << "Hash map initialized."  << std::endl;
     
     // Insert key-value pairs into the HashMap
     myHashMap.put(1, 1);
-    myHashMap.put(2, 2);
-    
-    // Retrieve values from the HashMap
-    
-    std::cout << "Actual: " << myHashMap.get(0) << "Expected: []"  << std::endl;
-    std::cout << "Value for key 1: " << myHashMap.get(1) << std::endl; // Output: 1
-    std::cout << "Value for key 3: " << myHashMap.get(3) << std::endl; // Output: -1
-    
-    // Update an existing key-value pair
     myHashMap.put(2, 1);
+
+    // Verify insert
+    result = myHashMap.get(1);    // return 1, The map is now [[1,1], [2,2]]
+    assert(result == 1  && "Insert failed");
+    result = myHashMap.get(2);
+    assert(result == 1  && "Insert failed");
+    result = myHashMap.get(3);    // return -1 (i.e., not found), The map is now [[1,1], [2,2]]
+    assert(result == -1 && "Insert failed");
     
-    // Retrieve the updated value
-    std::cout << "Updated value for key 2: " << myHashMap.get(2) << std::endl; // Output: 1
+    // Update
+    myHashMap.put(2, 1); // The map is now [[1,1], [2,1]] (i.e., update the existing value)
     
-    // Remove a key-value pair
-    myHashMap.remove(2);
+    // Verify update
+    result = myHashMap.get(2);    // return 1, The map is now [[1,1], [2,1]]
+    assert(result == 1 && "Update failed");
     
-    // Attempt to retrieve the removed key
-    std::cout << "Value for key 2 after removal: " << myHashMap.get(2) << std::endl; // Output: -1
+    // Remove
+    myHashMap.remove(2); // remove the mapping for 2, The map is now [[1,1]]
+    
+    // Verify remove
+    result = myHashMap.get(2);    // return -1 (i.e., not found), The map is now [[1,1]]
+    assert(result == -1 && "Remove failed");
 }
 
 int main() {
-    // testMyHashMap();
+    testMyHashMap();
     return 0;
 }
-
-/**
- * Your MyHashMap object will be instantiated and called as such:
- * MyHashMap* obj = new MyHashMap();
- * obj->put(key,value);
- * int param_2 = obj->get(key);
- * obj->remove(key);
- */
