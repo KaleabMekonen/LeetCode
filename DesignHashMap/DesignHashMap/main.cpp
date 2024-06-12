@@ -5,61 +5,33 @@
 //  Created by Kaleab Mekonen on 6/3/24.
 //  Problem: https://leetcode.com/problems/design-hashmap/description/
 
-#include <vector>
 #include <iostream>
 #include <cassert>
+#include <unordered_map>
 
 class MyHashMap {
 private:
-    // Max number of key value pair 10^4.
-    //
-    static const int SIZE = 10000;
-    
-    // Initialize multi dimensional vector [[key,value], [key,value]].
-    //
-    std::vector<std::pair<int, int>> HashMap[SIZE];
-    
+    std::unordered_map<int, int> hashMap;
+
 public:
-    //  Constructor initializes the object with an empty map, the class has a map private property.
-    //
     MyHashMap() {}
 
-    //  inserts a (key, value) pair into the HashMap. If the key already exists in the map,
-    // update the corresponding value
-    //
     void put(int key, int value) {
-        // Constraint
-        //
-        if (key < 0) return;
-        
-        // Search the key
-        for (auto& keyValuePair : HashMap[key]) {
-            // If it exists, update the value.
-            //
-            if (keyValuePair.first == key) {
-                keyValuePair.second = value;
-                return;
-            }
-        }
-        
-        // If key doesn't exist, create a key value pair and push it to the map.
-        //
-        HashMap[key].push_back({key, value});
+        hashMap[key] = value;
     }
-    
+
     int get(int key) {
-        for (const auto& keyValuePair : HashMap[key]) {
-            if (keyValuePair.first == key) {
-                return keyValuePair.second;
-            }
+        if (hashMap.find(key) != hashMap.end()) {
+            return hashMap[key];
+        } else {
+            return -1;
         }
-        return -1;
     }
-    
+
     void remove(int key) {
-        if (key < 0 || key >= SIZE) return; // Check if key is within valid range
-        
-        HashMap[key].clear(); // Clear the vector associated with the given key
+        if (hashMap.find(key) != hashMap.end()) {
+            hashMap.erase(key);
+        }
     }
 };
 
